@@ -1,0 +1,88 @@
+<h1 style="text-align: center;" >STUDEND FORM</h1>
+
+
+<form name="form" method="get" action="" >
+    <table width="228" border="1" style="margin: 0 auto;">
+
+<tr>
+    <td width = "70" >Name </td>
+    <td width = "166" >
+        <input type="text" id="sname"> </td>
+
+</tr>
+<tr>
+    <td width = "70" >Age </td>
+    <td width = "166" >
+        <input type="number" id="sage"> </td>
+
+</tr>
+<tr>
+    <td width = "70" >Gender </td>
+    <td width = "166" >
+        <input type="radio" id="sgenderf" name="gender" value="Femail">Femail
+        <input type="radio" id="sgenderm" name="gender" value="Male">Male
+     </td>
+</tr>
+<tr>
+    <td width = "70"  >Course </td>
+    <td width = "166" >
+        <select id="scourse">
+            <option id="coursepy">python</option>
+            <option id="coursejs">javascript</option>
+        </select>
+
+</tr>
+<tr>
+    <td width = "70" >E-mail </td>
+    <td width = "166" >
+        <input type="email" id="semail"> </td>
+    
+</tr>
+<td  > 
+    
+    <button onclick="add(event)">
+    SAVE 
+</button></td> 
+    </table>
+</form>
+<form>
+    <table width="500px" border="1px" style="margin-left: 30%;" id="tablebox">
+        <tr>
+            <td>Name</td>
+            <td>Age</td>
+            <td>Course</td>
+            <td>Gender</td>
+            <td>E-Mail</td>
+            <td>Action</td>
+        </tr>
+        
+    </table>
+</form>
+
+
+<script>
+var sname   = document.getElementById("sname")
+var sage   = document.getElementById("sage") 
+var sgenderm   = document.getElementById("sgenderm") 
+var sgenderf   = document.getElementById("sgenderf") 
+var scourse   = document.getElementById("scourse") 
+var semail   = document.getElementById("semail") 
+var tablebox   = document.getElementById("tablebox")
+
+function add(event)
+{
+    var tr = document.createElement("tr")
+    tr.setAttribute("id","tablebox")
+    tr.innerHTML = `<td>${sname.value}</td>
+            <td>${sage.value}</td>
+            <td>${scourse.value}</td>
+            <td>${sgenderm.value}</td>
+            <td>${sgenderf.value}</td>
+            <td>${semail.value}</td>
+            <td><button>Delete</button></td>`
+            tablebox.append(tr)
+
+            event.preventDefault()
+}
+     
+</script>
